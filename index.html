@@ -52,11 +52,11 @@
     <!-- Hero -->
     <section id="hero" class="hero">
         <div class="hero-right">
-            <img src="Picture/profile.png" class="img-fluid rounded-circle" alt="My Self">
+            <img src="Picture/profile.png" class="img-fluid rounded-circle heroImg" alt="My Self">
         </div>
         <div class="hero-left">
-            <h1 class="display-4">I am Bagas Saputra</h1>
-            <p class="lead">Gamer | Web Developer | Editor</p>
+            <h1 class="display-4 mainText">I am <span>Bagas Saputra</span></h1>
+            <p class="lead"></p>
         </div>
         <div class="hero-svg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -76,13 +76,13 @@
                     <h2 data-aos="zoom-in-down" data-aos-duration="1200" data-aos-offset="250">About Me</h2>
                 </div>
                 <div class="row fs-5">
-                    <div class="col-lg-6" data-aos="fade-down-right" data-aos-duration="1500" data-aos-offset="250">
+                    <div class="col-lg-6" data-aos="fade-down-right" data-aos-duration="1500" data-aos-offset="220">
                         <p>Saya adalah orang yang memiliki visi dan misi yang jelas, selalu berpikir logis, suka
                             tantangan serta terkadang ambisius, tidak terlalu banyak berbicara dan tidak terlalu peka
                             terhadap orang lain atau cuek pada sekitar karena moto hidup saya fokus development pada
                             diri sendiri.</p>
                     </div>
-                    <div class="col-lg-6" data-aos="fade-down-left" data-aos-duration="1500" data-aos-offset="250">
+                    <div class="col-lg-6" data-aos="fade-down-left" data-aos-duration="1500" data-aos-offset="220">
                         <p>Kemampuan saya dibidang pemrograman adalah menguasai beberapa bahasa pemrograman seperti
                             HTML, CSS, dan
                             JavaScript, serta kemampuan editing dengan menguasai beberapa software editing seperti
@@ -135,7 +135,7 @@
                         data-aos-duration="1200">
                         <img src="Picture/projects.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Landing Page</h5>
+                            <h5 class="card-title">Portofolio Web</h5>
                             <p class="card-text">Website Landing Page that I made with HTML, CSS, and JavaScript.</p>
                             <a href="#" class="btn btn-primary tombol">Visit site</a>
                         </div>
@@ -153,25 +153,25 @@
         </path>
     </svg>
     <section id="gallery">
-        <div class="row m-auto container">
+        <div class="row m-auto container pb-5">
             <div class="col fs-3 mb-2 text-center">
                 <h2 data-aos="zoom-in-down" data-aos-duration="1200" data-aos-offset="250">Gallery</h2>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4">
-                    <img src="Picture/img7.jpg" alt="image-7">
+                    <img src="Picture/img7.jpg" alt="image-7" class="gallery-img">
                 </div>
                 <div class="col-md-4">
-                    <img src="Picture/img2.jpg" alt="image-2">
+                    <img src="Picture/img2.jpg" alt="image-2" class="gallery-img">
                 </div>
                 <div class="col-md-4">
-                    <img src="Picture/img1.jpg" alt="image-1">
+                    <img src="Picture/img1.jpg" alt="image-1" class="gallery-img">
                 </div>
                 <div class="col-md-4">
-                    <img src="Picture/img3.jpg" alt="image-3">
+                    <img src="Picture/img3.jpg" alt="image-3" class="gallery-img">
                 </div>
                 <div class="col-md-4">
-                    <img src="Picture/img6.jpg" alt="image-6">
+                    <img src="Picture/img6.jpg" alt="image-6" class="gallery-img">
                 </div>
             </div>
         </div>
@@ -185,9 +185,9 @@
 
 
     <!-- Contact -->
-    <section class="contact">
+    <section class="contact pb-3">
         <div class="row" id="contact">
-            <div class="col text-center mb-3">
+            <div class="col text-center">
                 <h2>Contact Me</h2>
             </div>
             <div class="row justify-content-center">
@@ -230,7 +230,7 @@
 
     <!-- Footer -->
     <footer>
-        <p class="fs-4 text-center">Created with 💖 by <a>Bagas Saputra</a></p>
+        <p class="fs-5 text-center">Created with 💖 by <a>Bagas Saputra</a></p>
     </footer>
     <!-- Akhir Footer -->
 
@@ -243,9 +243,51 @@
     <!-- AOS JavaScript -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        const galleryImg = document.querySelectorAll('.gallery-img');
+
+        galleryImg.forEach((img, i) => {
+            img.dataset.aos = 'fade-down'
+            img.dataset.aosDelay = i * 200;
+            img.dataset.aosDuration = 1000;
+        })
+
         AOS.init({
             once: true,
         });
+    </script>
+
+    <!-- GSAP JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js">
+    </script>
+
+    <script>
+        gsap.registerPlugin(TextPlugin)
+        //replaces yourElement's text with "This is the new text" 
+        gsap.to('.lead', {
+            duration: 2,
+            text: "Gamer | Web Developer | Editor",
+            delay: 1.2,
+        });
+        gsap.from('.heroImg', {
+            duration: 1,
+            rotateY: 360,
+            opacity: 0,
+        })
+        gsap.from('.mainText', {
+            duration: 1.2,
+            x: -100,
+            opacity: 0,
+            ease: 'bounce',
+        })
+        gsap.from('.navbar',{
+            duration: 1,
+            opacity: 0,
+            y: -80,
+            ease: 'back'
+        })
+        
     </script>
 
     <!-- My JavaScript -->

@@ -49,11 +49,6 @@
     border-bottom-right-radius: 20px;
 }
 
-/* Contact */
-.contact {
-    overflow-x: hidden;
-}
-
 /* Gallery */
 #gallery {
     background-color: var(--bs-dark-bg-subtle);
@@ -65,10 +60,15 @@
     justify-content: center;
 }
 
-#gallery img {
+.gallery-img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, .3);
+}
+
+/* Contact */
+.contact {
+    overflow-x: hidden;
 }
 
 .contact .row {
@@ -122,6 +122,11 @@ footer {
         justify-self: center;
         align-self: center;
         grid-area: hero-L;
+    }
+
+    span{
+        font-weight: 700;
+        color: blue;
     }
 
     .hero-svg {
