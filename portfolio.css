@@ -13,6 +13,17 @@
     background-color: var(--bs-dark-bg-subtle);
 }
 
+.navbar-brand {
+    transition: .3s ease-in;
+}
+
+.navbar-brand:hover {
+    color: transparent;
+    font-weight: 700;
+    -webkit-text-stroke: 1px rgb(28, 28, 253);
+    text-shadow: 1px 1px 3px rgba(0, 0, 255, 0.2);
+}
+
 .nav-item {
     margin-right: 2rem;
 }
@@ -32,6 +43,11 @@
     width: 65%;
     margin-bottom: 1rem;
     border: 5px solid var(--bs-dark-bg-subtle);
+    box-shadow: 1px 3px 10px 3px rgba(0, 0, 0, .4);
+}
+
+.hero-left {
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, .3);
 }
 
 /* About */
@@ -124,7 +140,7 @@ footer {
         grid-area: hero-L;
     }
 
-    span{
+    span {
         font-weight: 700;
         color: blue;
     }
