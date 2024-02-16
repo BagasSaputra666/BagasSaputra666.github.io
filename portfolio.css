@@ -18,9 +18,7 @@
 }
 
 .navbar-brand:hover {
-    color: transparent;
-    font-weight: 700;
-    -webkit-text-stroke: 1px rgb(28, 28, 253);
+    color: blue;
     text-shadow: 1px 1px 3px rgba(0, 0, 255, 0.2);
 }
 
@@ -39,10 +37,9 @@
     margin-top: 1rem !important;
 }
 
-.hero img {
-    width: 65%;
-    margin-bottom: 1rem;
+.heroImg {
     border: 5px solid var(--bs-dark-bg-subtle);
+    width: 65%;
     box-shadow: 1px 3px 10px 3px rgba(0, 0, 0, .4);
 }
 
@@ -223,7 +220,7 @@ footer {
         grid-area: hero-R;
     }
 
-    .hero-right img {
+    .heroImg {
         width: 80%;
     }
 

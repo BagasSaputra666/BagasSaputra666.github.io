@@ -149,7 +149,8 @@
             <div class="container">
                 <div class="row text-center my-5">
                     <div class="col">
-                        <h2>My Figures</h2>
+                        <h2 data-aos="zoom-in-down" data-aos-duration="1200" data-aos-offset="250" class="textFigures">
+                            My Figures</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -164,14 +165,14 @@
                         <div class="figures-box">
                             <h3 class="figures-name">Monkey D.Luffy</h3>
                             <img src="Picture/anime-33.png" alt="Monkey D. Luffy" class="figures-img">
-                            <a href="#" class="btn btn-outline-danger figure-details">Show Details</a>
+                            <a href="#" class="btn btn-outline-warning figure-details">Show Details</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-3">
                         <div class="figures-box">
                             <h3 class="figures-name">Lawliet</h3>
                             <img src="Picture/anime-png-image-pngfre-12.png" alt="Lawliet" class="figures-img">
-                            <a href="#" class="btn btn-outline-danger figure-details">Show Details</a>
+                            <a href="#" class="btn btn-outline-primary figure-details">Show Details</a>
                         </div>
                     </div>
                 </div>
@@ -278,12 +279,20 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         const galleryImg = document.querySelectorAll('.gallery-img');
+        const figuresBox = document.querySelectorAll('.figures-box');
 
         galleryImg.forEach((img, i) => {
             img.dataset.aos = 'fade-down'
             img.dataset.aosDelay = i * 200;
             img.dataset.aosDuration = 1000;
         })
+
+        figuresBox.forEach((div, i) => {
+            div.dataset.aos = 'fade-up'
+            div.dataset.aosDelay = i * 500;
+            div.dataset.aosDuration = 1000;
+        })
+
 
         AOS.init({
             once: true,
