@@ -1,0 +1,12 @@
+import './app.css';
+import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+import './components/header.css';
+import './components/hero.css';
+import './components/about.css';
+import './components/featured.css';
+import './components/projects.css';
+import './components/contact.css';
+import './components/footer.css';
+import './components/mobile-nav.css';
+import './modern-normalize.css';
+import './utils.css';
