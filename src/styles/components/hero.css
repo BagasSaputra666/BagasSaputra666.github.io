@@ -13,7 +13,9 @@
     object-position: center;
     object-fit: cover;
     border: 3px solid var(--clr-slate400);
+    overflow: hidden;
 }
+
 
 .hero-right {
     display: flex;
@@ -143,6 +145,11 @@
         filter: blur(1px) grayscale(1);
         transition: all .5s ease-in;
         cursor: pointer;
+    }
+
+    .hero-img img {
+        height: 100%;
+        object-fit: cover;
     }
 
     .hero-img:hover {

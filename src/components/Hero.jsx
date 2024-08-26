@@ -11,8 +11,18 @@ function Hero() {
 function HeroLeft() {
   return (
     <div className="hero-left">
-      <img className="hero-img" src="/images/HeroMain.jpg" alt="Profile Picture" />
+      <HeroImg />
     </div>
+  );
+}
+
+function HeroImg() {
+  return (
+    <picture className="hero-img">
+      <source media="(max-width : 450px)" srcSet="images/HeroMain(450w).jpg" />
+      <source media="(max-width : 756px)" srcSet="images/HeroMain(756w).jpg" />
+      <img src="images/HeroMain.jpg" alt="Bagas Saputra Picture" />
+    </picture>
   );
 }
 
